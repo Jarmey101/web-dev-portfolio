@@ -1,20 +1,24 @@
+Replace your entire `index.html` with this. High-end, soft dark, gold accents, strong readability.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jean Arne | Web Developer Portfolio</title>
+<title>Jean Arne | Web Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg1:#0b0f1a;
-  --bg2:#121826;
-  --panel:rgba(20,25,40,0.75);
-  --text:#f5f7fb;
-  --muted:#aab3c5;
+  --bg:#0c0f17;
+  --bg-soft:#121726;
+  --panel:rgba(18,23,38,0.7);
+  --text:#f8fafc;
+  --muted:#a1a9b8;
   --gold:#d4af37;
+  --gold-soft:rgba(212,175,55,0.12);
   --border:rgba(255,255,255,0.08);
 }
 
@@ -24,56 +28,69 @@ body{
   font-family:"Inter",sans-serif;
   color:var(--text);
   background:
-    radial-gradient(circle at 20% 10%, rgba(212,175,55,0.12), transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05), transparent 40%),
-    linear-gradient(180deg,var(--bg1),var(--bg2));
+    radial-gradient(circle at 15% 10%, rgba(212,175,55,0.15), transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,0.05), transparent 40%),
+    linear-gradient(180deg,var(--bg),var(--bg-soft));
+  line-height:1.65;
 }
 
 .container{
-  width:min(1100px,100% - 32px);
+  width:min(1150px,100% - 32px);
   margin:auto;
 }
 
-.section{padding:80px 0;}
+.section{padding:90px 0;}
 
-h1{font-size:3rem;font-weight:800;margin-bottom:10px;}
-h2{font-size:1.8rem;margin-bottom:20px;}
+h1{
+  font-family:"Cinzel",serif;
+  font-size:3.2rem;
+  margin-bottom:10px;
+}
+
+h2{
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
 p{color:var(--muted);}
 
 .hero{
-  padding:100px 0 60px;
+  padding:110px 0 70px;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:1fr 320px;
-  gap:40px;
+  grid-template-columns:1fr 340px;
+  gap:50px;
   align-items:center;
 }
 
 .hero img{
   width:100%;
-  border-radius:18px;
+  border-radius:20px;
   border:1px solid var(--border);
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
 .badge{
   display:inline-block;
-  padding:6px 12px;
+  padding:6px 14px;
   border-radius:999px;
-  background:rgba(212,175,55,0.1);
+  background:var(--gold-soft);
   color:var(--gold);
-  font-size:.8rem;
+  font-size:.75rem;
   margin-bottom:15px;
+  letter-spacing:.05em;
 }
 
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:12px 20px;
+  margin-top:25px;
+  padding:13px 22px;
   border-radius:10px;
   font-weight:600;
   transition:.25s;
+  border:1px solid var(--border);
 }
 
 .btn-primary{
@@ -83,20 +100,32 @@ p{color:var(--muted);}
 
 .btn-primary:hover{
   background:#e6c65a;
+  transform:translateY(-2px);
 }
 
+.btn-secondary{
+  color:var(--text);
+}
+
+.btn-secondary:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:24px;
+  gap:26px;
 }
 
 .card{
   background:var(--panel);
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(16px);
   border:1px solid var(--border);
-  border-radius:18px;
-  padding:26px;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
 /* PORTFOLIO */
@@ -107,28 +136,44 @@ p{color:var(--muted);}
 }
 
 .port-item{
+  padding:22px;
+  border-radius:16px;
   background:var(--panel);
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:20px;
+  transition:.25s;
+}
+
+.port-item:hover{
+  transform:translateY(-5px);
+  border-color:rgba(212,175,55,0.4);
 }
 
 .port-item a{
   color:var(--gold);
-  text-decoration:none;
   font-weight:600;
+  text-decoration:none;
 }
 
+/* CTA */
 .cta{
   text-align:center;
-  padding:40px;
-  border-radius:20px;
-  background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(255,255,255,0.03));
+  padding:50px;
+  border-radius:24px;
+  background:linear-gradient(135deg, rgba(212,175,55,0.18), rgba(255,255,255,0.02));
   border:1px solid var(--border);
 }
 
+footer{
+  text-align:center;
+  padding:40px;
+  color:#7c8597;
+}
+
+/* RESPONSIVE */
 @media(max-width:900px){
-  .hero-grid,.grid,.portfolio{
+  .hero-grid,
+  .grid,
+  .portfolio{
     grid-template-columns:1fr;
   }
 }
@@ -141,16 +186,22 @@ p{color:var(--muted);}
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="badge">13+ Years Experience</span>
-      <h1>Web Developer | WordPress | Landing Pages</h1>
+      <span class="badge">13+ YEARS EXPERIENCE</span>
+      <h1>Jean Arne</h1>
+
       <p>
-        I build clean, fast, and conversion-focused websites using WordPress and HTML.
-        Reliable, accurate, and ready for real business use.
+        Web Developer specializing in WordPress and high-conversion landing pages.
+        I build clean, fast, and professional websites designed for real business results.
       </p>
 
       <a href="https://www.upwork.com/freelancers/jeanarne" target="_blank" class="btn btn-primary">
-Hire Me on Upwork
-</a>
+        Hire Me on Upwork
+      </a>
+
+      <a href="https://www.upwork.com/freelancers/jeanarne" target="_blank" class="btn btn-secondary">
+        View Profile
+      </a>
+    </div>
 
     <div>
       <img src="https://wordpressplace.com/wp-content/uploads/2026/03/jean-arne-2.png">
@@ -158,22 +209,22 @@ Hire Me on Upwork
   </div>
 </section>
 
-<!-- WHY ME -->
+<!-- WHY -->
 <section class="section">
   <div class="container grid">
     <div class="card">
-      <h2>Why Choose Me</h2>
+      <h2>Why Clients Choose Me</h2>
       <p>
-        I focus on clean structure, fast delivery, and accuracy. I can take your
-        provided design or example and turn it into a working website without errors.
+        I focus on accuracy, speed, and clean execution. I can take any provided
+        design or example and turn it into a working website without errors.
       </p>
     </div>
 
     <div class="card">
       <h2>Core Skills</h2>
       <p>
-        WordPress, HTML, landing pages, WooCommerce, optimization, hosting setup,
-        and performance improvements.
+        WordPress, HTML, landing pages, WooCommerce, optimization,
+        hosting setup, and performance improvements.
       </p>
     </div>
   </div>
@@ -225,10 +276,15 @@ Hire Me on Upwork
   <div class="container">
     <div class="cta">
       <h2>Ready to Build Your Website</h2>
-      <p>Clean, fast, and reliable work. Built to perform.</p>
+      <p>Clean execution. Fast delivery. Professional results.</p>
     </div>
   </div>
 </section>
 
+<footer>
+© 2026 Jean Arne • Web Developer
+</footer>
+
 </body>
 </html>
+```
