@@ -1,706 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Work With Me | WordPress Place</title>
-  <meta
-    name="description"
-    content="Work with Jean Arne of WordPress Place — a skilled web developer with 13+ years of experience in WordPress, HTML, landing pages, optimization, and secure website development."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --panel: #111111;
-      --panel-2: #171717;
-      --text: #f5f5f5;
-      --muted: #b8b8b8;
-      --gold: #d4af37;
-      --gold-soft: rgba(212, 175, 55, 0.12);
-      --border: rgba(255,255,255,0.08);
-      --max: 1200px;
-      --radius: 20px;
-      --shadow: 0 20px 50px rgba(0,0,0,0.35);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jean Arne | Web Developer Portfolio</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+:root{
+  --bg1:#0b0f1a;
+  --bg2:#121826;
+  --panel:rgba(20,25,40,0.75);
+  --text:#f5f7fb;
+  --muted:#aab3c5;
+  --gold:#d4af37;
+  --border:rgba(255,255,255,0.08);
+}
 
-    body {
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.10), transparent 25%),
-        linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
-      color: var(--text);
-      line-height: 1.65;
-    }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+body{
+  font-family:"Inter",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(212,175,55,0.12), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05), transparent 40%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+.container{
+  width:min(1100px,100% - 32px);
+  margin:auto;
+}
 
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin-inline: auto;
-    }
+.section{padding:80px 0;}
 
-    .section {
-      padding: 90px 0;
-    }
+h1{font-size:3rem;font-weight:800;margin-bottom:10px;}
+h2{font-size:1.8rem;margin-bottom:20px;}
+p{color:var(--muted);}
 
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 999px;
-      color: var(--gold);
-      background: var(--gold-soft);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
+.hero{
+  padding:100px 0 60px;
+}
 
-    h1, h2, h3 {
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-    }
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:40px;
+  align-items:center;
+}
 
-    h1 {
-      font-size: clamp(2.6rem, 6vw, 4.6rem);
-      font-weight: 800;
-      margin-bottom: 22px;
-    }
+.hero img{
+  width:100%;
+  border-radius:18px;
+  border:1px solid var(--border);
+}
 
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(212,175,55,0.1);
+  color:var(--gold);
+  font-size:.8rem;
+  margin-bottom:15px;
+}
 
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:600;
+  transition:.25s;
+}
 
-    p {
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
+.btn-primary{
+  background:var(--gold);
+  color:#111;
+}
 
-    .lead {
-      font-size: 1.12rem;
-      max-width: 650px;
-    }
+.btn-primary:hover{
+  background:#e6c65a;
+}
 
-    .hero {
-      padding: 110px 0 80px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 48px;
-    }
+.card{
+  background:var(--panel);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:26px;
+}
 
-    .hero-copy p {
-      margin-bottom: 28px;
-    }
+/* PORTFOLIO */
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
+.port-item{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-    }
+.port-item a{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .btn-primary {
-      background: var(--gold);
-      color: #111;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.18);
-    }
+.cta{
+  text-align:center;
+  padding:40px;
+  border-radius:20px;
+  background:linear-gradient(135deg, rgba(212,175,55,0.15), rgba(255,255,255,0.03));
+  border:1px solid var(--border);
+}
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 36px rgba(212,175,55,0.22);
-    }
-
-    .btn-secondary {
-      border-color: rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(212,175,55,0.45);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-card img {
-      border-radius: 22px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .hero-meta {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .meta-box {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
-      text-align: center;
-    }
-
-    .meta-box strong {
-      display: block;
-      color: var(--gold);
-      font-size: 1.2rem;
-      margin-bottom: 2px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .skill-card {
-      background: linear-gradient(180deg, var(--panel), #121212);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 26px 22px;
-      transition: 0.25s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(212,175,55,0.28);
-    }
-
-    .skill-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      background: var(--gold-soft);
-      border: 1px solid rgba(212,175,55,0.22);
-      color: var(--gold);
-      font-size: 1.3rem;
-      font-weight: 800;
-    }
-
-    .list {
-      list-style: none;
-      margin-top: 16px;
-    }
-
-    .list li {
-      position: relative;
-      padding-left: 18px;
-      margin-bottom: 10px;
-      color: var(--muted);
-    }
-
-    .list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    .cert-wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-      margin-top: 30px;
-    }
-
-    .cert-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border: 1px solid rgba(212,175,55,0.3);
-      border-radius: 999px;
-      color: var(--gold);
-      background: var(--gold-soft);
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .stat-card {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .stat-card strong {
-      display: block;
-      font-size: 1.6rem;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    .reason-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .reason-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 18px 18px 52px;
-      position: relative;
-      color: var(--muted);
-    }
-
-    .reason-item::before {
-      content: "✓";
-      position: absolute;
-      left: 18px;
-      top: 18px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--gold-soft);
-      border: 1px solid rgba(212,175,55,0.28);
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .cta {
-      padding: 34px;
-      border-radius: 28px;
-      border: 1px solid rgba(212,175,55,0.2);
-      background:
-        linear-gradient(135deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02)),
-        #0f0f0f;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .cta p {
-      max-width: 720px;
-      margin: 0 auto 26px;
-    }
-
-    footer {
-      padding: 30px 0 60px;
-      text-align: center;
-      color: #8e8e8e;
-      font-size: 0.95rem;
-    }
-
-    .accent {
-      color: var(--gold);
-    }
-
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .grid-2,
-      .cert-wrap,
-      .skills-grid,
-      .reason-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 80px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .section {
-        padding: 70px 0;
-      }
-
-      .hero-meta,
-      .stat-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .card,
-      .skill-card,
-      .cta {
-        padding: 22px;
-      }
-    }
-  </style>
+@media(max-width:900px){
+  .hero-grid,.grid,.portfolio{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">WordPress Place • Skills & Credentials</span>
-          <h1>
-            Web Developer Built for <span class="accent">Real Client Work</span>
-          </h1>
-          <p class="lead">
-            I help businesses launch clean, fast, and professional websites with
-            WordPress, HTML, landing pages, optimization, and secure web setup.
-            I bring over 13 years of hands-on experience and a practical mindset
-            focused on getting the job done right.
-          </p>
-          <div class="hero-actions">
-            <a href="#skills" class="btn btn-primary">View My Skills</a>
-            <a href="#certification" class="btn btn-secondary">See Certification</a>
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">13+ Years Experience</span>
+      <h1>Web Developer | WordPress | Landing Pages</h1>
+      <p>
+        I build clean, fast, and conversion-focused websites using WordPress and HTML.
+        Reliable, accurate, and ready for real business use.
+      </p>
 
-        <div class="hero-card">
-          <img
-            src="https://wordpressplace.com/wp-content/uploads/2026/03/jean-arne-2.png"
-            alt="Jean Arne - WordPress Place Web Developer"
-          />
-          <div class="hero-meta">
-            <div class="meta-box">
-              <strong>13+</strong>
-              <span>Years Experience</span>
-            </div>
-            <div class="meta-box">
-              <strong>WP</strong>
-              <span>WordPress Expert</span>
-            </div>
-            <div class="meta-box">
-              <strong>HTML</strong>
-              <span>Custom Builds</span>
-            </div>
-          </div>
-        </div>
+      <a href="https://www.upwork.com/" class="btn btn-primary">Hire Me on Upwork</a>
+    </div>
+
+    <div>
+      <img src="https://wordpressplace.com/wp-content/uploads/2026/03/jean-arne-2.png">
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="section">
+  <div class="container grid">
+    <div class="card">
+      <h2>Why Choose Me</h2>
+      <p>
+        I focus on clean structure, fast delivery, and accuracy. I can take your
+        provided design or example and turn it into a working website without errors.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Core Skills</h2>
+      <p>
+        WordPress, HTML, landing pages, WooCommerce, optimization, hosting setup,
+        and performance improvements.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+  <div class="container">
+    <h2>Recent Work</h2>
+
+    <div class="portfolio">
+      <div class="port-item">
+        <strong>Marie Arne Realty</strong><br>
+        <a href="https://mariearnerealty.com" target="_blank">View Website</a>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <span class="eyebrow">About Me</span>
-          <h2>Why Clients Trust My Work</h2>
-          <p>
-            My name is Jean Arne. I build websites that are clean, effective, and
-            ready for business use. I do not rely on guesswork. I focus on solid
-            structure, modern design, speed, usability, and accurate execution.
-          </p>
-          <p style="margin-top:16px;">
-            I have worked across WordPress, HTML, business websites, landing pages,
-            eCommerce setups, hosting environments, and optimization workflows. My
-            goal is simple: deliver work that looks professional, works properly,
-            and helps the client move forward.
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="eyebrow">Upwork Ready</span>
-          <h2>Why I’m a Strong Fit for Upwork Projects</h2>
-          <ul class="list">
-            <li>Fast turnaround with strong attention to detail</li>
-            <li>Accurate page builds from provided examples and assets</li>
-            <li>Clean and maintainable page structure</li>
-            <li>Strong communication and consistency</li>
-            <li>Experience with WordPress, custom HTML, and front-end layout work</li>
-            <li>Security-aware development approach</li>
-            <li>Long-term collaboration mindset</li>
-          </ul>
-        </div>
+      <div class="port-item">
+        <strong>Speedy Seal Notary</strong><br>
+        <a href="https://speedysealnotary.com" target="_blank">View Website</a>
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="container">
-        <span class="eyebrow">Core Skills</span>
-        <h2>What I Do Best</h2>
-        <p class="lead">
-          These are the areas where I bring the most value to clients, businesses,
-          and long-term website projects.
-        </p>
-
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon">WP</div>
-            <h3>WordPress Development</h3>
-            <p>
-              Custom pages, theme setup, plugin configuration, WooCommerce support,
-              and business-ready WordPress builds.
-            </p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">LP</div>
-            <h3>Landing Pages</h3>
-            <p>
-              Clean, conversion-focused landing pages built from provided layouts,
-              assets, and client instructions.
-            </p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">HT</div>
-            <h3>HTML / Front-End</h3>
-            <p>
-              Responsive custom HTML pages with strong layout structure, modern
-              styling, and mobile-friendly presentation.
-            </p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">OP</div>
-            <h3>Optimization</h3>
-            <p>
-              Website speed improvement, structure cleanup, SEO basics, usability
-              refinement, and hosting/domain support.
-            </p>
-          </div>
-        </div>
+      <div class="port-item">
+        <strong>Live In Angels</strong><br>
+        <a href="https://liveinangels.net" target="_blank">View Website</a>
       </div>
-    </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <span class="eyebrow">Experience</span>
-          <h2>13+ Years of Practical Web Experience</h2>
-          <p>
-            I have spent more than a decade working in web development and related
-            digital platforms. That includes WordPress, Adobe workflows, Shopify,
-            WooCommerce, HTML websites, hosting, domain configuration, and overall
-            website improvement.
-          </p>
-          <p style="margin-top:16px;">
-            I understand how to take a project from idea to final page. I also know
-            how to work from provided content, match a reference, and produce a clean
-            result without unnecessary complication.
-          </p>
-        </div>
-
-        <div class="card">
-          <span class="eyebrow">What That Means for Clients</span>
-          <h2>Experience That Solves Real Problems</h2>
-          <ul class="list">
-            <li>Professional page structure without messy layouts</li>
-            <li>Better page speed and smoother user experience</li>
-            <li>Reliable handling of edits, updates, and revisions</li>
-            <li>Strong visual presentation aligned with business goals</li>
-            <li>Ability to build fast from examples and pre-made assets</li>
-            <li>Confidence working on client-facing websites</li>
-          </ul>
-        </div>
+      <div class="port-item">
+        <strong>WordPress Place</strong><br>
+        <a href="https://wordpressplace.com" target="_blank">View Website</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- CERTIFICATION -->
-    <section class="section" id="certification">
-      <div class="container">
-        <span class="eyebrow">Certification</span>
-        <h2>Professional Credential</h2>
+<!-- CERT -->
+<section class="section">
+  <div class="container card">
+    <h2>Certification</h2>
+    <p>Google Cybersecurity Professional Certificate</p>
 
-        <div class="cert-wrap">
-          <div class="card">
-            <div class="cert-badge">Verified Professional Certificate</div>
-            <h3 style="font-size:1.6rem; margin-bottom:14px;">
-              Google Cybersecurity Professional Certificate
-            </h3>
-            <p>
-              This certification strengthens my technical foundation by adding
-              security awareness, system thinking, and a stronger understanding of
-              protecting digital environments. It supports the way I approach website
-              work: not only functional and visually strong, but also built with a
-              security-conscious mindset.
-            </p>
+    <a href="https://www.coursera.org/account/accomplishments/professional-cert/7D3MBYQVBMW8" target="_blank" class="btn btn-primary">
+      Verify Certificate
+    </a>
+  </div>
+</section>
 
-            <div class="hero-actions" style="margin-top:24px;">
-              <a
-                href="https://www.coursera.org/account/accomplishments/professional-cert/7D3MBYQVBMW8"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary"
-              >
-                View Certificate
-              </a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>What This Adds to My Web Work</h3>
-            <div class="stat-grid">
-              <div class="stat-card">
-                <strong>Secure</strong>
-                <span>Stronger awareness of digital safety and risk</span>
-              </div>
-              <div class="stat-card">
-                <strong>Practical</strong>
-                <span>Useful knowledge applied to real website environments</span>
-              </div>
-              <div class="stat-card">
-                <strong>Reliable</strong>
-                <span>Better handling of systems, access, and platform setup</span>
-              </div>
-              <div class="stat-card">
-                <strong>Professional</strong>
-                <span>Proof of continued growth and technical discipline</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY HIRE ME -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Why Hire Me</span>
-        <h2>What Makes Me a Good Choice for the Job</h2>
-        <p class="lead">
-          Clients need more than someone who can place text on a page. They need
-          someone who understands structure, presentation, speed, and reliability.
-        </p>
-
-        <div class="reason-grid">
-          <div class="reason-item">I can build from examples quickly and accurately.</div>
-          <div class="reason-item">I understand both design presentation and technical execution.</div>
-          <div class="reason-item">I bring real experience, not theory only.</div>
-          <div class="reason-item">I know how to work inside WordPress and custom HTML setups.</div>
-          <div class="reason-item">I pay attention to details that affect quality and trust.</div>
-          <div class="reason-item">I approach projects with professionalism and consistency.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section">
-      <div class="container">
-        <div class="cta">
-          <span class="eyebrow">Let’s Work</span>
-          <h2>Ready for a Developer Who Can Deliver</h2>
-          <p>
-            If you need a reliable web developer with 13+ years of experience,
-            strong WordPress and HTML skills, and a verified professional certificate,
-            I am ready to help build your next project the right way.
-          </p>
-          <div class="hero-actions" style="justify-content:center;">
-            <a href="/contact" class="btn btn-primary">Contact WordPress Place</a>
-            <a
-              href="https://www.coursera.org/account/accomplishments/professional-cert/7D3MBYQVBMW8"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              Verify My Certificate
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 WordPress Place. Built to present the skills, certification, and experience of Jean Arne.
-  </footer>
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to Build Your Website</h2>
+      <p>Clean, fast, and reliable work. Built to perform.</p>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
